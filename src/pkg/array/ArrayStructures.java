@@ -27,8 +27,6 @@ public class ArrayStructures {
 			
 			theArray[i] = (int)(Math.random() * 10) + 10;
 			
-			if(i == 4 || i == 7) {theArray[i] = 11;}
-			
 		}
 
 		// - last position in array
