@@ -48,5 +48,16 @@ public class CreateArray {
 		}
 		
 	}
+	
+	// - Swap values
+	public void swapValuesArray(int[] arrayIn, int indexOne, int indexTwo) {
+		
+		int tempValue = arrayIn[indexOne];
+		
+		arrayIn[indexOne] = arrayIn[indexTwo];
+		
+		arrayIn[indexTwo] = tempValue;
+		
+	}
 		
 }
