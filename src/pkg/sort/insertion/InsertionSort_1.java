@@ -6,19 +6,19 @@ public class InsertionSort_1 {
 		
 		for (int i = 0; i < arrayIn.length; i++) {
 
-			int j = i;
+			int tempIndex = i;
 
 			int valueToInsert = arrayIn[i];
 
-			while((j > 0) && (arrayIn[j - 1] > valueToInsert)) {
+			while((tempIndex > 0) && (arrayIn[tempIndex - 1] > valueToInsert)) {
 				
-				arrayIn[j] = arrayIn[j - 1];
+				arrayIn[tempIndex] = arrayIn[tempIndex - 1];
 				
-				j--;
+				tempIndex--;
 				
 			}
 			
-			arrayIn[j] = valueToInsert;
+			arrayIn[tempIndex] = valueToInsert;
 			
 		}
 		
