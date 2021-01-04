@@ -1,4 +1,4 @@
-package pkg.array;
+package pkg_one.array;
 
 public class ArrayStructures {
 	

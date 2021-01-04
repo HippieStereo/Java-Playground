@@ -1,4 +1,4 @@
-package pkg.sort.insertion;
+package pkg_one.sort.insertion;
 
 public class InsertionSort_1 {
 	

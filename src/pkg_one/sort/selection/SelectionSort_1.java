@@ -1,6 +1,6 @@
-package pkg.sort.selection;
+package pkg_one.sort.selection;
 
-import pkg.array.CreateArray;
+import pkg_one.array.CreateArray;
 
 public class SelectionSort_1 {
 	

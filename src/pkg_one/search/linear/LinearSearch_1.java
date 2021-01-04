@@ -1,6 +1,6 @@
-package pkg.search.linear;
+package pkg_one.search.linear;
 
-import pkg.array.CreateArray;
+import pkg_one.array.CreateArray;
 
 public class LinearSearch_1 {
 

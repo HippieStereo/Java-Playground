@@ -1,4 +1,4 @@
-package pkg.search.binary;
+package pkg_one.search.binary;
 
 public class BinarySearch_1 {
 

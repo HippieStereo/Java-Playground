@@ -1,34 +1,24 @@
-package pkg.sort.bubble;
+package pkg_one.sort.bubble;
 
-import pkg.array.CreateArray;
+import pkg_one.array.CreateArray;
 
-public class BubbleSort_2 {
+public class BubbleSort_1 {
 	
 	int tempValue;
 	
 	public void bubbleSort(int[] arrayIn, CreateArray createArray) {
 		
-		boolean isSorted = false;
-		
-		int latestNotSorted = arrayIn.length - 1;
-		
-		while(!isSorted) {
+		for(int j = arrayIn.length - 1; j > 1; j--) {
 			
-			isSorted = true;
-			
-			for(int i = 0; i < latestNotSorted; i++) {
+			for(int i = 0; i < arrayIn.length - 1; i++) {
 				
 				if(arrayIn[i] > arrayIn[i + 1]) {
 					
 					createArray.swapValuesArray(arrayIn, i, i + 1);
 					
-					isSorted = false;
-					
 				}
 				
 			}
-			
-			latestNotSorted--;
 			
 		}
 		
@@ -37,7 +27,7 @@ public class BubbleSort_2 {
 	public static void main(String[] args) {
 
 		CreateArray createArray = new CreateArray();
-		BubbleSort_2 bubbleSort_2 = new BubbleSort_2();
+		BubbleSort_1 bubbleSort_1 = new BubbleSort_1();
 
 		// - make array
 		int[] theArray = createArray.makeArray(10);
@@ -49,7 +39,7 @@ public class BubbleSort_2 {
 		// - execution time
 		long startTime = System.nanoTime();
 		
-		bubbleSort_2.bubbleSort(theArray, createArray);
+		bubbleSort_1.bubbleSort(theArray, createArray);
 		
 		long endTime = System.nanoTime();
 		

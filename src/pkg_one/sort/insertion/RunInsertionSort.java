@@ -1,6 +1,6 @@
-package pkg.sort.insertion;
+package pkg_one.sort.insertion;
 
-import pkg.array.CreateArray;
+import pkg_one.array.CreateArray;
 
 public class RunInsertionSort {
 

@@ -1,7 +1,7 @@
-package pkg.search.binary;
+package pkg_one.search.binary;
 
-import pkg.array.CreateArray;
-import pkg.sort.bubble.BubbleSort_2;
+import pkg_one.array.CreateArray;
+import pkg_one.sort.bubble.BubbleSort_2;
 
 public class RunBinarySearch {
 	
