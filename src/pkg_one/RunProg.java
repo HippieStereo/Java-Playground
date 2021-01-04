@@ -23,7 +23,7 @@ public class RunProg {
  		theStack.printStack();*/
  		
  		// - QUEUE
-		TheQueue theQueue = new TheQueue(10);
+		/*TheQueue theQueue = new TheQueue(10);
 		
 		theQueue.insertOne("0");
 		theQueue.insertOne("1");
@@ -40,7 +40,10 @@ public class RunProg {
 		theQueue.priorityInsert("7");
 		theQueue.priorityInsert("2");
 		theQueue.priorityInsert("4");
-		theQueue.printQueue();
+		theQueue.printQueue();*/
+		
+		// - LINKED lIST
+		
 		
 	}
 
