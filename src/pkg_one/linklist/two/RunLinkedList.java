@@ -27,11 +27,19 @@ public class RunLinkedList {
 		
 		System.out.println("-----\n");
 		
+		// Send the LinkedList to the iterator
+		
 		NeighborIterator neighbors = new NeighborIterator(theLinkList_2);
+		
+		// Get the first neighbor and display
 		
 		neighbors.currentNeighbor.display();
 		
+		// Is there another?
+		
 		System.out.println(neighbors.hasNext());
+		
+		// Switch to the next Neighbor
 		
 		neighbors.next();
 		

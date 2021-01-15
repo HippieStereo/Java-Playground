@@ -6,6 +6,9 @@ public class Neighbor {
 	public int houseNumber;
 	
 	public Neighbor next;
+	
+	// Used with Doubly Linked List
+	
 	public Neighbor previous;
 	
 	public Neighbor(String homeOwnerName, int houseNumber) {

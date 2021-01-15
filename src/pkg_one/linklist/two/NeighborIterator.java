@@ -1,11 +1,16 @@
 package pkg_one.linklist.two;
 
+//An iterator provides an easy way to cycle through all
+//the objects in a LinkedList
+
 public class NeighborIterator {
 	
 	public Neighbor currentNeighbor;
 	public Neighbor previousNeighbor;
 	
 	public DoubleEndedLinkedList theNeighbors;
+	
+	// hasNext, next, remove are common iterator methods
 	
 	public NeighborIterator(DoubleEndedLinkedList theNeighbors) {
 
@@ -44,6 +49,8 @@ public class NeighborIterator {
 	
 	public void remove() {
 		
+		// If at the beginning of the list
+		
 		if(previousNeighbor == null) {
 			
 			theNeighbors.firstLink = currentNeighbor.next;
@@ -51,6 +58,8 @@ public class NeighborIterator {
 		} else {
 			
 			previousNeighbor.next = currentNeighbor.next;
+			
+			// If at end of list
 			
 			if(currentNeighbor.next == null) {
 				

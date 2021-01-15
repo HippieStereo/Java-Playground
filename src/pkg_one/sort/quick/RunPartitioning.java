@@ -12,6 +12,9 @@ public class RunPartitioning {
 		
 		System.out.println(Arrays.toString(Partitioning.theArray));
 		
+		// Every item smaller than 35 will be on the left and
+		// everything bigger will be on the right
+		
 		partitionArray.partitionArray(35);
 		
 		System.out.println(Arrays.toString(Partitioning.theArray));

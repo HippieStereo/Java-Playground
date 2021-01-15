@@ -6,6 +6,7 @@ public class CreateArray {
 	private int theArraySize;
 	
 	// - Create Array
+	
 	public int[] makeArray(int arraySize) {
 		
 		theArray = new int[arraySize];
@@ -16,6 +17,7 @@ public class CreateArray {
 	}
 	
 	// - Generate Random Values
+	
 	public int[] generateRandomValues(int[] arrayIn) {
 		
 		theArraySize = arrayIn.length;
@@ -31,6 +33,7 @@ public class CreateArray {
 	}
 	
 	// - Print Array
+	
 	public void printArray(int[] arrayIn) {
 		
 		theArraySize = arrayIn.length;
@@ -50,6 +53,7 @@ public class CreateArray {
 	}
 	
 	// - Swap values
+	
 	public void swapValuesArray(int[] arrayIn, int indexOne, int indexTwo) {
 		
 		int tempValue = arrayIn[indexOne];

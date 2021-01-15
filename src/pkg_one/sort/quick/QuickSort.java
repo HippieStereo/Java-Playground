@@ -1,5 +1,7 @@
 package pkg_one.sort.quick;
 
+//The Quick Sort is normally the fastest sorting algorithm
+
 public class QuickSort {
 	
 	static int[] theArray;
@@ -15,8 +17,11 @@ public class QuickSort {
 	public void quickSort(int left, int right) {
 		
 		if(right - left <= 0)
-			return;
+			return; // Everything is sorted
 		else {
+			
+			// It doesn't matter what the pivot is, but it must
+			// be a value in the array
 			
 			int pivot = theArray[right];
 			
@@ -30,8 +35,8 @@ public class QuickSort {
 			
 			System.out.println("Value in left " + theArray[left] + " is made the pivot");
 			
-			quickSort(left, pivotLocation - 1);
-			quickSort(pivotLocation + 1, right);
+			quickSort(left, pivotLocation - 1); // Sorts the left side
+			quickSort(pivotLocation + 1, right); // Sorts the right side
 			
 		}
 		

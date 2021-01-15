@@ -21,6 +21,10 @@ public class Recursion {
 	
 	public int getTriangularNumberRecursive(int number) {
 		
+		// Every recursive method must have a condition that
+		// leads to the method no longer making another method
+		// call on itself. This is known as the base case
+		
 		System.out.println("Method " + number);
 		
 		if(number == 1) {

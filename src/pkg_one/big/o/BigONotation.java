@@ -126,7 +126,7 @@ public class BigONotation {
 	// on because the amount of data is halved on each run through
 	
 	public void binarySearchForValue(int value) {
-		
+				
 		startTime = System.currentTimeMillis();
 		
 		int lowIndex = 0;
