@@ -6,6 +6,9 @@ public class TheQueue {
 	
 	private String[] queueArray;
 	private int queueSize;
+	
+	// Sets stack as empty
+	
 	private int front, rear, numberOfItems = 0;
 	
 	public TheQueue(int size) {
@@ -13,6 +16,9 @@ public class TheQueue {
 		queueSize = size;
 		
 		queueArray = new String[size];
+		
+		// Assigns the value of -1 to every value in the array
+		// so I control what gets printed to screen
 		
 		Arrays.fill(queueArray, "-1");
 		
@@ -39,6 +45,8 @@ public class TheQueue {
 		
 	}
 	
+	// This priority insert will add items in order from high to low
+	
 	public void priorityInsert(String strIn) {
 		
 		int i = 0;
@@ -55,7 +63,7 @@ public class TheQueue {
 					
 					queueArray[i+1] = queueArray[i];
 					
-				} else break;
+				} else break; // Done shifting items in queue
 				
 			}
 			
@@ -74,6 +82,8 @@ public class TheQueue {
 		if(numberOfItems > 0) {
 			
 			System.out.println("Queue remove : " + queueArray[front] + " in index / front : " + front);
+			
+			// Just like in memory an item isn't deleted, but instead is just not available
 			
 			queueArray[front] = "-1";
 			

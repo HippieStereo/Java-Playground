@@ -3,17 +3,17 @@ package pkg_one.sort.quick;
 //The Quick Sort is normally the fastest sorting algorithm
 
 public class QuickSort {
-	
+
 	static int[] theArray;
 	static int arraySize;
-	
+
 	public QuickSort(int newArraySize) {
 	
 		arraySize = newArraySize;
 		theArray = new int[arraySize];
 
 	}
-	
+
 	public void quickSort(int left, int right) {
 		
 		if(right - left <= 0)
