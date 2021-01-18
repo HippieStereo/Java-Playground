@@ -43,6 +43,21 @@ public class HashFunction {
 		
 	}
 	
+	public boolean isPrime(int number) {
+		
+		boolean result = false;
+		int tempNumber = number;
+		
+		do {
+			
+			tempNumber--;
+			
+		} while (tempNumber >= 0);
+		
+		return result;
+		
+	}
+	
 	// Now let's say we have to hold values between 0 & 999
 	// but we never plan to have more than 15 values in all.
 	// It wouldn't make sense to make a 1000 item array, so
