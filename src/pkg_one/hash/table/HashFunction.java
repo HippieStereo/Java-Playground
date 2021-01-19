@@ -1,6 +1,8 @@
 package pkg_one.hash.table;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 
 //If we think of a Hash Table as an array
 //then a hash function is used to generate
@@ -45,16 +47,112 @@ public class HashFunction {
 	
 	public boolean isPrime(int number) {
 		
-		boolean result = false;
-		int tempNumber = number;
-		
-		do {
+		if (number % 2 == 0) {
 			
-			tempNumber--;
+			return false;
 			
-		} while (tempNumber >= 0);
+		}
 		
-		return result;
+		for(int i = 3; i * i <= number; i +=2) {
+			
+			if (number % i == 0) {
+				
+				return false;
+				
+			}
+			
+		}
+		
+		return true;
+		
+	}
+	
+	public int getNextPrime(int minNumberToCheck) {
+		
+		for(int i = minNumberToCheck; true; i++) {
+			
+			if(isPrime(i)) {
+				
+				return i;
+				
+			}
+			
+		}
+		
+	}
+	
+	public void increaseArraySize(int minArraySize) {
+		
+		int newArraySize = getNextPrime(minArraySize);
+		
+		moveOldArray(newArraySize);
+		
+	}
+	
+	public void moveOldArray(int newArraySize) {
+		
+		String[] cleanArray = removeEmptySpaceInArray(theArray);
+		
+		theArray = new String[newArraySize];
+		
+		this.arraySize = newArraySize;
+		
+		fillArrayWithNeg1();
+		
+		hashFunction_2(cleanArray, theArray);
+		
+	}
+	
+	public String[] removeEmptySpaceInArray(String[] arrayToClean){
+		
+		ArrayList<String> stringList = new ArrayList<String>();
+		
+		for(String theString : arrayToClean) {
+			
+			if(!theString.equals("-1") && !theString.equals("")) {
+				
+				stringList.add(theString);
+				
+			}
+			
+		}
+		
+		return stringList.toArray(new String[stringList.size()]);
+		
+	}
+	
+	public void doubleHashFunc(String[] stringsForArray, String[] theArray) {
+		
+		for (int i = 0; i < stringsForArray.length; i++) {
+			
+			String newElementValue = stringsForArray[i];
+			
+			// Create an index to store the value in by taking
+			// the modulus
+			
+			int arrayIndex = Integer.parseInt(newElementValue) % arraySize;
+			
+			int stepDistance = 7 - (Integer.parseInt(newElementValue) % 7);
+			
+			System.out.println("Modulos Index = " + arrayIndex + " for value " + newElementValue);
+			
+			// Cycle through the array until we find an empty space
+			
+			while(theArray[arrayIndex] != "-1") {
+				
+				arrayIndex += stepDistance;
+				
+				System.out.println("Collision Try " + arrayIndex + "Instead");
+				
+				// If we get to the end of the array go back to index 0
+				
+				arrayIndex %= arraySize;
+				
+			}
+			
+			theArray[arrayIndex] = newElementValue;
+			
+		}
 		
 	}
 	
@@ -103,6 +201,42 @@ public class HashFunction {
 		
 	}
 	
+	public String findKeyDblHashed(String key) {
+		
+		// Find the keys original hash key
+		
+		int arrayIndexHash = Integer.parseInt(key) % 29;
+		
+		int stepDistance = 7 - (Integer.parseInt(key) % 7);
+		
+		while(theArray[arrayIndexHash] != "-1") {
+			
+			if(theArray[arrayIndexHash] == key) {
+				
+				System.out.println(key + " was found in index : " + arrayIndexHash);
+				
+				// Found the key so return it
+				
+				return theArray[arrayIndexHash];
+				
+			}
+			
+			// Look in the next index
+			
+			arrayIndexHash += stepDistance;
+			
+			// If we get to the end of the array go back to index 0
+			
+			arrayIndexHash %= arraySize;
+			
+		}
+		
+		System.out.println(key + " was not found in ...");
+		
+		return null;
+		
+	}
+	
 	// Returns the value stored in the Hash Table
 	
 	public String findKey(String key) {
@@ -135,6 +269,12 @@ public class HashFunction {
 		
 		return null;
 		
+	}
+	
+	public void fillArrayWithNeg1() {
+
+		Arrays.fill(theArray, "-1");
+
 	}
 	
 	public void displayTheStack() {

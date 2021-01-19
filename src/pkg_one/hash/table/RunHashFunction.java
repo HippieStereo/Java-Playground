@@ -48,6 +48,24 @@ public class RunHashFunction {
 		
 		theFunc_3.displayTheStack();
 		
+		// 
+		
+		theFunc_3.increaseArraySize(60);
+		
+		theFunc_3.displayTheStack();
+		
+		//
+		
+		//theFunc_3.fillArrayWithNeg1();
+		
+		theFunc_3.doubleHashFunc(elementsToAdd_3, theFunc_3.theArray);
+		
+		theFunc_3.displayTheStack();
+		
+		//
+		
+		theFunc_3.findKeyDblHashed("510");
+		
 	}
 
 }
