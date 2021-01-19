@@ -2,7 +2,6 @@ package pkg_one.hash.table;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 
 //If we think of a Hash Table as an array
 //then a hash function is used to generate
@@ -47,11 +46,15 @@ public class HashFunction {
 	
 	public boolean isPrime(int number) {
 		
+		// Eliminate the need to check versus even numbers
+		
 		if (number % 2 == 0) {
 			
 			return false;
 			
 		}
+		
+		// Check against all odd numbers
 		
 		for(int i = 3; i * i <= number; i +=2) {
 			
@@ -62,6 +65,8 @@ public class HashFunction {
 			}
 			
 		}
+		
+		// If we make it here we know it is odd
 		
 		return true;
 		
@@ -131,6 +136,11 @@ public class HashFunction {
 			// the modulus
 			
 			int arrayIndex = Integer.parseInt(newElementValue) % arraySize;
+			
+			// Get the distance to skip down in the array
+			// after a collision occurs. We are doing this
+			// rather than just going to the next index to
+			// avoid creating clusters
 			
 			int stepDistance = 7 - (Integer.parseInt(newElementValue) % 7);
 			

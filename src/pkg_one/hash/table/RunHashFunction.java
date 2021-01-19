@@ -66,6 +66,10 @@ public class RunHashFunction {
 		
 		theFunc_3.findKeyDblHashed("510");
 		
+		// Hashing strings
+		
+		
+		
 	}
 
 }
