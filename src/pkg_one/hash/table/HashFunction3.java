@@ -45,6 +45,8 @@ public class HashFunction3 {
 		
 		theArray = new WordList[size];
 		
+		// Fill the array with WordLists
+		
 		for (int i = 0; i < arraySize; i++) {
 			
 			theArray[i] = new WordList();
@@ -58,8 +60,11 @@ public class HashFunction3 {
 	public void insert(Word newWord) {
 		
 		String wordToHash = newWord.theWord;
+		// Calculate the hashkey for the Word
 		int hashKey = stringHashFunction(wordToHash);
 		
+		// Add the new word to the array and set
+		// the key for the word
 		theArray[hashKey].insert(newWord, hashKey);
 		
 	}
@@ -71,8 +76,10 @@ public class HashFunction3 {
 			String word = elementsToAdd[i][0];
 			String defenition = elementsToAdd[i][1];
 			
+			// Create the Word with the word name and definition
 			Word newWord = new Word(word, defenition);
 			
+			// Add the Word to theArray
 			insert(newWord);
 			
 		}
@@ -93,6 +100,7 @@ public class HashFunction3 {
 	
 	public Word find(String wordToFind) {
 		
+		// Calculate the hash key for the word
 		int hashKey = stringHashFunction(wordToFind);
 		Word theWord = theArray[hashKey].find(hashKey, wordToFind);
 		
@@ -104,12 +112,18 @@ public class HashFunction3 {
 		
 		int hashKeyValue = 0;
 		
+		// 'a' has the character code of 97 so subtract
+		// to make our letters start at 1
+		
 		for (int i = 0; i < wordToHash.length(); i++) {
 			
 			int charCode = wordToHash.charAt(i) - 96;
 			
 			int hKVTemp = hashKeyValue;
 			
+			// Calculate the hash key using the 26 letters
+			// plus blank
+
 			hashKeyValue = (hashKeyValue * 27 + charCode) % arraySize;
 			
 			System.out.println("Hash Key Value " + hKVTemp + " * 27 + Character Code " +
@@ -127,9 +141,13 @@ public class HashFunction3 {
 		
 		Scanner input = new Scanner(System.in);
 		
+		// Make a 11 item array that will hold words and definitions
+		
 		HashFunction3 wordHashTable = new HashFunction3(11);
 		
 		String wordLookUp = "a";
+		
+		// Keep retrieve requests until x is entered
 		
 		while(!wordLookUp.equalsIgnoreCase("x")) {
 			
@@ -137,9 +155,17 @@ public class HashFunction3 {
 			
 			wordLookUp = input.nextLine();
 			
+			// Look for the word requested and print
+			// it out to screen
+			
 			System.out.println(wordHashTable.find(wordLookUp));
 			
 		}
+		
+		// Display every item in the array with
+		// the index they are associated with
+
+		wordHashTable.displayTheArray();
 		
 	}
 
@@ -150,6 +176,7 @@ class Word{
 	public String theWord;
 	public String definition;
 	public int key; 
+	// Reference to next Word made in the WordList
 	public Word next;
 	
 	public Word(String theWord, String definition) {
@@ -168,6 +195,9 @@ class Word{
 }
 
 class WordList{
+	
+	// Reference to first Link in list
+	// The last Link added to the LinkedList
 	
 	public Word firstWord = null;
 	
@@ -216,6 +246,11 @@ class WordList{
 	public Word find(int hashKey, String wordToFind) {
 		
 		Word current = firstWord;
+		
+		// Search for key, but stop searching if
+		// the hashKey < what we are searching for
+		// Because the list is sorted this allows
+		// us to avoid searching the whole list
 		
 		while(current != null && current.key <= hashKey) {
 			
