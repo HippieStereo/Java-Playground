@@ -1,0 +1,16 @@
+Factory Design Pattern
+
+https://www.youtube.com/watch?v=ub0DXaeV6hA
+
+WHAT ?
+
+- The factory object returns one of several classes that share a super class
+- The Class is chosen at run time
+
+WHEN ?
+
+- You don't know ahead of time what class object you need
+- When all of the potential classes have the same super class
+- To centralize class selection code
+- You don't want the user o have to know every subclass
+- To encapsulate object creation
