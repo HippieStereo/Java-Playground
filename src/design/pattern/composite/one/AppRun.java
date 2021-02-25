@@ -36,7 +36,7 @@ public class AppRun {
 		((Composite)pc).addComponent(box);
 		((Composite)pc).addComponent(periferic);
 		
-		periferic.showPrice();
+		pc.showPrice();
 		
 	}
 
