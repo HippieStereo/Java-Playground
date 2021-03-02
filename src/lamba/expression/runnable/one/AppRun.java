@@ -31,9 +31,6 @@ public class AppRun {
 			
 		}
 		
-		// New way
-		
-		
 	}
 
 }
