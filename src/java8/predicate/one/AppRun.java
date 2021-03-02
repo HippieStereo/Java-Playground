@@ -9,6 +9,10 @@ public class AppRun {
 		Predicate<Integer> funcCheckGreater = i -> i > 20;
 		
 		System.out.println("Is greater then 20 ? -> " + funcCheckGreater.test(20));
+		
+		Predicate<String> funcTextSize = a -> a.length() > 5;
+		
+		System.out.println("Is string lenth then 5 ? -> " + funcTextSize.test("qwer"));
 
 	}
 
