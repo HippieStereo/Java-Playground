@@ -2,7 +2,7 @@ package java8.predicate.joins.one;
 
 import java.util.function.Predicate;
 
-public class AppRun {
+public class AppRun_1 {
 
 	public static void main(String[] args) {
 
