@@ -24,7 +24,7 @@ public class AppRun_2 {
 		checkNumber(predicateInt_1.and(predicateInt_2), theArray);
 		
 		System.out.println("Numbers greater than 10 or even");
-		checkNumber(predicateInt_2.or(predicateInt_1), theArray);
+		checkNumber(predicateInt_1.or(predicateInt_2), theArray);
 		
 	}
 	
