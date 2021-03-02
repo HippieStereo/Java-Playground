@@ -10,8 +10,6 @@ public class AppRun{
 		
 		FuncInterfaceInt funSumInt = (x, y) -> x + y;
 		
-		//int total = funSumInt(11, 22);
-		
 		System.out.println("Test Sum : " + funSumInt.sum(11, 22));
 		
 	}
